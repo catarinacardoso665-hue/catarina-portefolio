@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catarina Cardoso | Portefólio Académico</title>
   <meta name="description" content="Portefólio académico de Catarina Cardoso, estudante de Engenharia de Sistemas com interesse em Engenharia e Gestão Industrial, logística, análise de dados e gestão de projetos." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --soft: #A7A4AD;
@@ -22,87 +24,425 @@
       --radius: 28px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: "Inter", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1120px, calc(100% - 42px)); margin: 0 auto; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 42px));
+      margin: 0 auto;
+    }
 
     header {
-      position: sticky; top: 0; z-index: 20;
+      position: sticky;
+      top: 0;
+      z-index: 20;
       background: linear-gradient(90deg, var(--dark), #234D4A);
       color: var(--white);
       box-shadow: 0 10px 30px rgba(25,55,53,0.16);
     }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
-    .brand { display: flex; align-items: center; gap: 14px; font-weight: 700; }
-    .logo { width: 42px; height: 42px; border: 1px solid rgba(255,255,255,0.55); border-radius: 50%; display: grid; place-items: center; font-family: "Playfair Display", serif; font-size: 1.1rem; }
-    .brand small { display: block; font-weight: 400; color: rgba(255,255,255,0.72); margin-top: -4px; }
-    .nav-links { display: flex; gap: 26px; font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.86); }
-    .nav-links a:hover { color: var(--white); }
 
-    .hero { min-height: calc(100vh - 78px); display: grid; grid-template-columns: 0.95fr 1.05fr; align-items: center; gap: 42px; padding: 74px 0 68px; position: relative; overflow: hidden; }
-    .hero::before { content: ""; position: absolute; width: 620px; height: 620px; border-radius: 50%; background: rgba(167,164,173,0.18); right: 22%; top: -120px; z-index: -1; }
-    .hero::after { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; background: rgba(82,118,116,0.22); right: -160px; bottom: -160px; z-index: -1; }
-    .hero h1 { font-family: "Playfair Display", serif; font-size: clamp(4rem, 9vw, 8rem); line-height: 0.86; letter-spacing: -0.055em; margin-bottom: 28px; color: var(--dark); }
-    .hero h1 span { color: var(--soft); display: block; }
-    .accent-line { width: 78px; height: 4px; background: var(--green); margin-bottom: 26px; }
-    .subtitle { font-family: "Playfair Display", serif; color: var(--dark); font-size: clamp(1.45rem, 2.5vw, 2rem); margin-bottom: 26px; }
-    .hero-text { max-width: 620px; color: #3F4C4A; font-size: 1.02rem; margin-bottom: 30px; }
-    .info-list { display: grid; gap: 13px; color: #394744; font-weight: 500; }
-    .info-item { display: flex; align-items: center; gap: 14px; }
-    .icon { width: 38px; height: 38px; border-radius: 50%; background: var(--green); color: var(--white); display: grid; place-items: center; font-size: 0.88rem; font-weight: 800; }
-    .hero-photo-wrap { align-self: end; display: flex; justify-content: center; }
-    .hero-photo { width: min(520px, 100%); max-height: 760px; object-fit: cover; object-position: center top; border-radius: 42% 42% 0 0; filter: drop-shadow(0 28px 42px rgba(25,55,53,0.18)); }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
 
-    section { padding: 78px 0; }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 34px; }
-    .eyebrow { color: var(--green); font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.74rem; margin-bottom: 12px; }
-    h2 { font-family: "Playfair Display", serif; color: var(--dark); font-size: clamp(2.2rem, 4vw, 3.6rem); line-height: 1.05; letter-spacing: -0.04em; }
-    .section-head p { max-width: 560px; color: var(--muted); }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+    }
 
-    .about-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: stretch; }
-    .card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; box-shadow: 0 12px 34px rgba(25,55,53,0.06); }
-    .card h3 { color: var(--dark); margin-bottom: 10px; font-size: 1.1rem; }
-    .card p, .card li { color: var(--muted); font-size: 0.95rem; }
-    .side-list { display: grid; gap: 24px; }
-    .side-item { display: grid; grid-template-columns: 52px 1fr; gap: 16px; align-items: start; }
-    .side-icon { width: 52px; height: 52px; border-radius: 18px; background: rgba(82,118,116,0.12); color: var(--green); display: grid; place-items: center; font-size: 1.35rem; }
-    .side-item strong { display: block; color: var(--dark); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.76rem; margin-bottom: 4px; }
+    .logo {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,0.55);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      letter-spacing: -0.04em;
+    }
 
-    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .tag-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-    .tag { display: inline-flex; align-items: center; border-radius: 999px; padding: 8px 12px; background: rgba(82,118,116,0.1); color: var(--green); font-size: 0.78rem; font-weight: 800; }
+    .brand small {
+      display: block;
+      font-weight: 400;
+      color: rgba(255,255,255,0.72);
+      margin-top: -4px;
+    }
 
-    .timeline { display: grid; gap: 16px; }
-    .timeline-item { display: grid; grid-template-columns: 150px 1fr; gap: 22px; padding: 26px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--line); }
-    .date { color: var(--green); font-weight: 800; font-size: 0.9rem; }
-    .timeline-item h3 { color: var(--dark); margin-bottom: 6px; }
-    .timeline-item p { color: var(--muted); font-size: 0.95rem; }
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.86);
+    }
 
-    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .project-card { min-height: 310px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
-    .project-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(167,164,173,0.24), transparent 34%); pointer-events: none; }
-    .meta { color: var(--green); font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
-    .project-card ul { padding-left: 18px; margin-top: 14px; }
+    .nav-links a:hover {
+      color: var(--white);
+    }
 
-    footer { padding: 40px 0 54px; text-align: center; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }
+    .hero {
+      min-height: calc(100vh - 78px);
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 44px;
+      padding: 76px 0 74px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: rgba(167,164,173,0.18);
+      right: 20%;
+      top: -120px;
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(82,118,116,0.22);
+      right: -170px;
+      bottom: -170px;
+      z-index: -1;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(4rem, 8vw, 7.4rem);
+      line-height: 0.88;
+      letter-spacing: -0.055em;
+      margin-bottom: 28px;
+      color: var(--dark);
+    }
+
+    h1 span {
+      color: var(--soft);
+      display: block;
+    }
+
+    .accent-line {
+      width: 78px;
+      height: 4px;
+      background: var(--green);
+      margin-bottom: 26px;
+    }
+
+    .subtitle {
+      font-family: "Playfair Display", serif;
+      color: var(--dark);
+      font-size: clamp(1.45rem, 2.4vw, 2rem);
+      margin-bottom: 26px;
+    }
+
+    .hero-text {
+      max-width: 620px;
+      color: #3F4C4A;
+      font-size: 1.02rem;
+      margin-bottom: 30px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 12px;
+      color: #394744;
+      font-weight: 500;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .info-item::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      flex: 0 0 auto;
+    }
+
+    .hero-photo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+    }
+
+    .hero-photo {
+      width: min(385px, 100%);
+      height: auto;
+      max-height: 585px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 220px 220px 28px 28px;
+      box-shadow: var(--shadow);
+      border: 10px solid rgba(255,255,255,0.72);
+      background: var(--white);
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.74rem;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--dark);
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      max-width: 560px;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 12px 34px rgba(25,55,53,0.06);
+    }
+
+    .card h3 {
+      color: var(--dark);
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .side-list {
+      display: grid;
+      gap: 22px;
+    }
+
+    .side-item {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding-left: 18px;
+      border-left: 3px solid rgba(82,118,116,0.32);
+    }
+
+    .side-item strong {
+      display: block;
+      color: var(--dark);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.76rem;
+      margin-bottom: 4px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(82,118,116,0.1);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 22px;
+      padding: 26px;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .date {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .timeline-item h3 {
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project-card {
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(167,164,173,0.24), transparent 34%);
+      pointer-events: none;
+    }
+
+    .meta {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .project-card ul {
+      padding-left: 18px;
+      margin-top: 14px;
+    }
+
+    footer {
+      padding: 40px 0 54px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--line);
+    }
 
     @media (max-width: 960px) {
-      .hero, .about-grid, .projects { grid-template-columns: 1fr; }
-      .hero-photo { max-height: 560px; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .section-head { display: block; }
-      .section-head p { margin-top: 12px; }
+      .hero,
+      .about-grid,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo {
+        width: min(350px, 100%);
+        max-height: 520px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 12px;
+      }
     }
+
     @media (max-width: 680px) {
-      .nav-links { display: none; }
-      .hero { padding-top: 52px; }
-      .timeline-item { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 4rem; }
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 4rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container nav">
@@ -110,6 +450,7 @@
         <span class="logo">CC</span>
         <span>Catarina Cardoso<small>Portefólio académico</small></span>
       </a>
+
       <nav class="nav-links" aria-label="Navegação principal">
         <a href="#sobre">Sobre mim</a>
         <a href="#competencias">Competências</a>
@@ -126,15 +467,18 @@
         <h1><span>Catarina</span>Cardoso</h1>
         <div class="accent-line"></div>
         <div class="subtitle">Estudante de Engenharia de Sistemas</div>
+
         <p class="hero-text">
           Finalista de Engenharia de Sistemas no ISEP, com interesse nas áreas de Gestão Industrial, Logística, Análise de Dados e Gestão de Projetos. Motivada pela aplicação de metodologias analíticas e tecnologias de apoio à decisão na otimização de operações e cadeias de abastecimento.
         </p>
+
         <div class="info-list">
-          <div class="info-item"><span class="icon">📍</span><span>Póvoa de Varzim, Portugal</span></div>
-          <div class="info-item"><span class="icon">✉</span><span>catarina.cardoso665@gmail.com</span></div>
-          <div class="info-item"><span class="icon">in</span><span>linkedin.com/in/catarina-cardoso</span></div>
+          <div class="info-item"><span>Póvoa de Varzim, Portugal</span></div>
+          <div class="info-item"><span>catarina.cardoso665@gmail.com</span></div>
+          <div class="info-item"><span>linkedin.com/in/catarina-cardoso</span></div>
         </div>
       </div>
+
       <div class="hero-photo-wrap">
         <img class="hero-photo" src="1-e7c764ff.jpg" alt="Fotografia de Catarina Cardoso" />
       </div>
@@ -151,10 +495,22 @@
               Ao longo do meu percurso académico, desenvolvi competências multidisciplinares que combinam tecnologia, gestão e pensamento analítico, através de projetos ligados à melhoria contínua, investigação operacional, sistemas de informação e apoio à decisão. Procuro aplicar dados e ferramentas tecnológicas para desenvolver soluções mais eficientes, estruturadas e orientadas para resultados.
             </p>
           </div>
+
           <div class="card side-list">
-            <div class="side-item"><span class="side-icon">🎓</span><div><strong>Licenciatura</strong><p>Engenharia de Sistemas<br>Instituto Superior de Engenharia do Porto</p></div></div>
-            <div class="side-item"><span class="side-icon">🌍</span><div><strong>Experiência internacional</strong><p>Programa Erasmus+<br>República Checa</p></div></div>
-            <div class="side-item"><span class="side-icon">↗</span><div><strong>Foco</strong><p>Dados · Processos · Projetos<br>Decisão · Resultados</p></div></div>
+            <div class="side-item">
+              <strong>Licenciatura</strong>
+              <p>Engenharia de Sistemas<br>Instituto Superior de Engenharia do Porto</p>
+            </div>
+
+            <div class="side-item">
+              <strong>Experiência internacional</strong>
+              <p>Programa Erasmus+<br>República Checa</p>
+            </div>
+
+            <div class="side-item">
+              <strong>Foco</strong>
+              <p>Dados · Processos · Projetos<br>Decisão · Resultados</p>
+            </div>
           </div>
         </div>
       </div>
@@ -163,13 +519,48 @@
     <section id="competencias">
       <div class="container">
         <div class="section-head">
-          <div><div class="eyebrow">Competências</div><h2>Áreas de atuação</h2></div>
+          <div>
+            <div class="eyebrow">Competências</div>
+            <h2>Áreas de atuação</h2>
+          </div>
           <p>Competências técnicas, analíticas e interpessoais desenvolvidas através de projetos académicos, experiência profissional e mobilidade internacional.</p>
         </div>
+
         <div class="skills-grid">
-          <article class="card"><h3>Análise de Dados & Tecnologia</h3><p>Tratamento, interpretação e visualização de dados para apoio à decisão.</p><div class="tag-list"><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">VBA</span></div></article>
-          <article class="card"><h3>Operações & Melhoria Contínua</h3><p>Análise de processos, identificação de oportunidades de melhoria e definição de indicadores.</p><div class="tag-list"><span class="tag">Logística</span><span class="tag">Supply Chain</span><span class="tag">KPIs</span><span class="tag">Análise ABC</span><span class="tag">Lean</span></div></article>
-          <article class="card"><h3>Gestão de Projetos</h3><p>Planeamento, acompanhamento e controlo de projetos em contextos académicos e colaborativos.</p><div class="tag-list"><span class="tag">MS Project</span><span class="tag">Scrum</span><span class="tag">EVM</span><span class="tag">Gestão de Risco</span></div></article>
+          <article class="card">
+            <h3>Análise de Dados & Tecnologia</h3>
+            <p>Tratamento, interpretação e visualização de dados para apoio à decisão.</p>
+            <div class="tag-list">
+              <span class="tag">Power BI</span>
+              <span class="tag">Excel</span>
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">VBA</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Operações & Melhoria Contínua</h3>
+            <p>Análise de processos, identificação de oportunidades de melhoria e definição de indicadores.</p>
+            <div class="tag-list">
+              <span class="tag">Logística</span>
+              <span class="tag">Supply Chain</span>
+              <span class="tag">KPIs</span>
+              <span class="tag">Análise ABC</span>
+              <span class="tag">Lean</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Gestão de Projetos</h3>
+            <p>Planeamento, acompanhamento e controlo de projetos em contextos académicos e colaborativos.</p>
+            <div class="tag-list">
+              <span class="tag">MS Project</span>
+              <span class="tag">Scrum</span>
+              <span class="tag">EVM</span>
+              <span class="tag">Gestão de Risco</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -177,12 +568,36 @@
     <section id="formacao">
       <div class="container">
         <div class="section-head">
-          <div><div class="eyebrow">Formação</div><h2>Percurso académico</h2></div>
+          <div>
+            <div class="eyebrow">Formação</div>
+            <h2>Percurso académico</h2>
+          </div>
         </div>
+
         <div class="timeline">
-          <article class="timeline-item"><div class="date">2023 — 2026</div><div><h3>Licenciatura em Engenharia de Sistemas</h3><p>Instituto Superior de Engenharia do Porto. Formação em sistemas de informação, gestão de operações, logística, análise de dados, gestão de projetos e otimização.</p></div></article>
-          <article class="timeline-item"><div class="date">2025 — 2026</div><div><h3>Programa de Mobilidade Erasmus+</h3><p>University of Hradec Králové, República Checa. Experiência internacional com desenvolvimento de autonomia, comunicação intercultural e adaptação a novos contextos.</p></div></article>
-          <article class="timeline-item"><div class="date">2020 — 2023</div><div><h3>Ciências e Tecnologias</h3><p>Escola Secundária Eça de Queirós, Póvoa de Varzim.</p></div></article>
+          <article class="timeline-item">
+            <div class="date">2023 — 2026</div>
+            <div>
+              <h3>Licenciatura em Engenharia de Sistemas</h3>
+              <p>Instituto Superior de Engenharia do Porto. Formação em sistemas de informação, gestão de operações, logística, análise de dados, gestão de projetos e otimização.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">2025 — 2026</div>
+            <div>
+              <h3>Programa de Mobilidade Erasmus+</h3>
+              <p>University of Hradec Králové, República Checa. Experiência internacional com desenvolvimento de autonomia, comunicação intercultural e adaptação a novos contextos.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">2020 — 2023</div>
+            <div>
+              <h3>Ciências e Tecnologias</h3>
+              <p>Escola Secundária Eça de Queirós, Póvoa de Varzim.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -190,14 +605,89 @@
     <section id="projetos">
       <div class="container">
         <div class="section-head">
-          <div><div class="eyebrow">Projetos</div><h2>Projetos académicos</h2></div>
+          <div>
+            <div class="eyebrow">Projetos</div>
+            <h2>Projetos académicos</h2>
+          </div>
           <p>Projetos selecionados pela ligação a operações, sistemas de informação, otimização, análise de dados e gestão de projetos, sem exposição de resultados sensíveis.</p>
         </div>
+
         <div class="projects">
-          <article class="card project-card"><div><div class="meta">Logística · Análise de Dados · Power BI</div><h3>Dimensionamento de Sistema Click & Collect</h3><p>Projeto em contexto empresarial focado no estudo de recolhas ao balcão e no apoio ao dimensionamento de um sistema baseado em lockers automatizados.</p><ul><li>Análise de encomendas, sazonalidade e padrões de procura.</li><li>Criação de dashboards e indicadores para apoio à decisão.</li><li>Ligação entre análise técnica e necessidades operacionais.</li></ul></div><div class="tag-list"><span class="tag">Excel</span><span class="tag">Power BI</span><span class="tag">KPIs</span><span class="tag">VBA</span></div></article>
-          <article class="card project-card"><div><div class="meta">Sistemas de Informação · Scrum · Requisitos</div><h3>Plataforma Web de Gestão de Colaboradores</h3><p>Projeto multidisciplinar em parceria com a Tlantic, orientado para a criação de uma solução web de gestão de colaboradores, equipas e perfis de utilizador.</p><ul><li>Levantamento e validação de requisitos junto da empresa.</li><li>Aplicação prática da framework Scrum.</li><li>Criação de interfaces, base de dados e dashboards de gestão.</li></ul></div><div class="tag-list"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Scrum</span><span class="tag">Requisitos</span></div></article>
-          <article class="card project-card"><div><div class="meta">Investigação Operacional · Otimização</div><h3>Caminhadas Lés-a-Lés</h3><p>Projeto focado no desenvolvimento de um modelo matemático e computacional para otimização de percursos pedestres com restrições de distância, tempo e abastecimento.</p><ul><li>Formulação do problema em programação linear inteira mista.</li><li>Definição de variáveis, restrições e função objetivo.</li><li>Implementação computacional para apoio à decisão.</li></ul></div><div class="tag-list"><span class="tag">Python</span><span class="tag">OR-Tools</span><span class="tag">MILP</span><span class="tag">Folium</span></div></article>
-          <article class="card project-card"><div><div class="meta">Gestão de Projetos · Planeamento</div><h3>Planeamento e Controlo de Evento Académico</h3><p>Projeto académico centrado no planeamento completo de um evento, incluindo estruturação de tarefas, cronograma, orçamento, logística, risco e controlo de desempenho.</p><ul><li>Construção de WBS, cronograma e planeamento de recursos.</li><li>Aplicação de Earned Value Management.</li><li>Análise de risco e documentação de projeto.</li></ul></div><div class="tag-list"><span class="tag">MS Project</span><span class="tag">WBS</span><span class="tag">Gantt</span><span class="tag">EVM</span></div></article>
+          <article class="card project-card">
+            <div>
+              <div class="meta">Logística · Análise de Dados · Power BI</div>
+              <h3>Dimensionamento de Sistema Click & Collect</h3>
+              <p>Projeto em contexto empresarial focado no estudo de recolhas ao balcão e no apoio ao dimensionamento de um sistema baseado em lockers automatizados.</p>
+              <ul>
+                <li>Análise de encomendas, sazonalidade e padrões de procura.</li>
+                <li>Criação de dashboards e indicadores para apoio à decisão.</li>
+                <li>Ligação entre análise técnica e necessidades operacionais.</li>
+              </ul>
+            </div>
+            <div class="tag-list">
+              <span class="tag">Excel</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">KPIs</span>
+              <span class="tag">VBA</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div>
+              <div class="meta">Sistemas de Informação · Scrum · Requisitos</div>
+              <h3>Plataforma Web de Gestão de Colaboradores</h3>
+              <p>Projeto multidisciplinar em parceria com a Tlantic, orientado para a criação de uma solução web de gestão de colaboradores, equipas e perfis de utilizador.</p>
+              <ul>
+                <li>Levantamento e validação de requisitos junto da empresa.</li>
+                <li>Aplicação prática da framework Scrum.</li>
+                <li>Criação de interfaces, base de dados e dashboards de gestão.</li>
+              </ul>
+            </div>
+            <div class="tag-list">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Scrum</span>
+              <span class="tag">Requisitos</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div>
+              <div class="meta">Investigação Operacional · Otimização</div>
+              <h3>Caminhadas Lés-a-Lés</h3>
+              <p>Projeto focado no desenvolvimento de um modelo matemático e computacional para otimização de percursos pedestres com restrições de distância, tempo e abastecimento.</p>
+              <ul>
+                <li>Formulação do problema em programação linear inteira mista.</li>
+                <li>Definição de variáveis, restrições e função objetivo.</li>
+                <li>Implementação computacional para apoio à decisão.</li>
+              </ul>
+            </div>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">OR-Tools</span>
+              <span class="tag">MILP</span>
+              <span class="tag">Folium</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div>
+              <div class="meta">Gestão de Projetos · Planeamento</div>
+              <h3>Planeamento e Controlo de Evento Académico</h3>
+              <p>Projeto académico centrado no planeamento completo de um evento, incluindo estruturação de tarefas, cronograma, orçamento, logística, risco e controlo de desempenho.</p>
+              <ul>
+                <li>Construção de WBS, cronograma e planeamento de recursos.</li>
+                <li>Aplicação de Earned Value Management.</li>
+                <li>Análise de risco e documentação de projeto.</li>
+              </ul>
+            </div>
+            <div class="tag-list">
+              <span class="tag">MS Project</span>
+              <span class="tag">WBS</span>
+              <span class="tag">Gantt</span>
+              <span class="tag">EVM</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -205,11 +695,28 @@
     <section id="atividades">
       <div class="container">
         <div class="section-head">
-          <div><div class="eyebrow">Atividades</div><h2>Envolvimento académico</h2></div>
+          <div>
+            <div class="eyebrow">Atividades</div>
+            <h2>Envolvimento académico</h2>
+          </div>
         </div>
+
         <div class="timeline">
-          <article class="timeline-item"><div class="date">2025 — 2026</div><div><h3>Experiência Erasmus+</h3><p>Adaptação a contextos multiculturais e desenvolvimento de autonomia, responsabilidade e comunicação intercultural.</p></div></article>
-          <article class="timeline-item"><div class="date">2024 — 2025</div><div><h3>Núcleo de Engenharia de Sistemas</h3><p>Organização de eventos académicos e colaboração com equipas multidisciplinares no Departamento de Comunicação e Imagem.</p></div></article>
+          <article class="timeline-item">
+            <div class="date">2025 — 2026</div>
+            <div>
+              <h3>Experiência Erasmus+</h3>
+              <p>Adaptação a contextos multiculturais e desenvolvimento de autonomia, responsabilidade e comunicação intercultural.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">2024 — 2025</div>
+            <div>
+              <h3>Núcleo de Engenharia de Sistemas</h3>
+              <p>Organização de eventos académicos e colaboração com equipas multidisciplinares no Departamento de Comunicação e Imagem.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
